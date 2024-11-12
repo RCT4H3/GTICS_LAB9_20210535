@@ -13,18 +13,30 @@
 <div class="container mt-4">
     <div class="card-footer">
         <form class="d-flex" method="post" th:action="@{/feature/buscar}">
-            <input type="text" class="form-control me-2" name="buscar" placeholder="Buscar..." aria-label="Buscar">
+            <input type="text" class="form-control me-2"
+                   name="buscar"
+                   placeholder="Buscar..."
+                   th:value="${buscado != null ? buscado : ''}"
+                   aria-label="Buscar">
             <button type="submit" class="btn btn-primary">Buscar</button>
         </form>
     </div>
 
+
     <div class="row">
         <div th:each="meal, iterStat : ${listaMeals}" class="col-md-4 mb-4">
             <div class="card">
-                <img th:src="${meal.getStrCategoryThumb()}" class="card-img-top" alt="Image of category" th:alt="${meal.strCategory}">
+                <h2 th:text="${meal.getStrMeal()}"></h2>
+                <form th:action="@{/feature/detail}" method="post">
+                    <input type="hidden" th:name="buscar" th:value="${buscado != null ? buscado : ''}">
+                    <input type="hidden" th:name="id" th:value="${meal.getIdMeal()}">
+                    <button type="submit" style="background: none; border: none; padding: 0;">
+                        <img th:src="${meal.getStrMealThumb()}" class="card-img-top" alt="Image of category" th:alt="${meal.strCategory}">
+                    </button>
+                </form>
+
                 <div class="card-body">
                     <h5 class="card-title" th:text="${meal.getStrCategory()}"></h5>
-                    <p class="card-text" th:text="${meal.getStrCategoryDescription()}"></p>
                 </div>
             </div>
         </div>
