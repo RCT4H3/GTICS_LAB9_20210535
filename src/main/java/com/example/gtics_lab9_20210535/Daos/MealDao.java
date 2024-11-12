@@ -1,6 +1,7 @@
 package com.example.gtics_lab9_20210535.Daos;
 
 import com.example.gtics_lab9_20210535.Entity.Meal1;
+import com.example.gtics_lab9_20210535.Entity.Meal2;
 import com.example.gtics_lab9_20210535.Wrappers.ResponseWrapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpMethod;
@@ -34,4 +35,23 @@ public class MealDao {
 
         return lista;
     }
+
+    public List<Meal2> listar2(String buscar) {
+
+        List<Meal2> lista = new ArrayList<>();
+
+        RestTemplate restTemplate = new RestTemplate();
+
+        String endPoint = "https://www.themealdb.com/api/json/v1/1/search.php?s="+buscar;
+
+        ResponseEntity<ResponseWrapper> responseEntity = restTemplate.getForEntity(endPoint, ResponseWrapper.class);
+
+        if(responseEntity.getStatusCode().is2xxSuccessful() && responseEntity.getBody() != null){
+            lista = responseEntity.getBody().getMeals();
+        }
+
+        return lista;
+    }
+
+
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Meal Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Meal Details</h1>
+    <div class="card">
+        <img th:src="${meal.strMealThumb}" class="card-img-top" alt="Meal Image">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${meal.strMeal}"></h5>
+            <p class="card-text">
+                <strong>Category:</strong> <span th:text="${meal.strCategory}"></span><br>
+                <strong>Area:</strong> <span th:text="${meal.strArea}"></span><br>
+                <strong>Tags:</strong> <span th:text="${meal.strTags}"></span><br>
+                <strong>Instructions:</strong> <span th:text="${meal.strInstructions}"></span><br>
+            </p>
+            <h5>Ingredients:</h5>
+            <ul>
+                <li><span th:text="${meal.strIngredient1}"></span>: <span th:text="${meal.strMeasure1}"></span></li>
+                <li><span th:text="${meal.strIngredient2}"></span>: <span th:text="${meal.strMeasure2}"></span></li>
+                <li><span th:text="${meal.strIngredient3}"></span>: <span th:text="${meal.strMeasure3}"></span></li>
+                <li><span th:text="${meal.strIngredient4}"></span>: <span th:text="${meal.strMeasure4}"></span></li>
+                <li><span th:text="${meal.strIngredient5}"></span>: <span th:text="${meal.strMeasure5}"></span></li>
+                <li><span th:text="${meal.strIngredient6}"></span>: <span th:text="${meal.strMeasure6}"></span></li>
+                <li><span th:text="${meal.strIngredient7}"></span>: <span th:text="${meal.strMeasure7}"></span></li>
+                <li><span th:text="${meal.strIngredient8}"></span>: <span th:text="${meal.strMeasure8}"></span></li>
+                <li><span th:text="${meal.strIngredient9}"></span>: <span th:text="${meal.strMeasure9}"></span></li>
+                <li><span th:text="${meal.strIngredient10}"></span>: <span th:text="${meal.strMeasure10}"></span></li>
+                <li><span th:text="${meal.strIngredient11}"></span>: <span th:text="${meal.strMeasure11}"></span></li>
+                <li><span th:text="${meal.strIngredient12}"></span>: <span th:text="${meal.strMeasure12}"></span></li>
+                <li><span th:text="${meal.strIngredient13}"></span>: <span th:text="${meal.strMeasure13}"></span></li>
+                <li><span th:text="${meal.strIngredient14}"></span>: <span th:text="${meal.strMeasure14}"></span></li>
+                <li><span th:text="${meal.strIngredient15}"></span>: <span th:text="${meal.strMeasure15}"></span></li>
+                <li><span th:text="${meal.strIngredient16}"></span>: <span th:text="${meal.strMeasure16}"></span></li>
+                <li><span th:text="${meal.strIngredient17}"></span>: <span th:text="${meal.strMeasure17}"></span></li>
+                <li><span th:text="${meal.strIngredient18}"></span>: <span th:text="${meal.strMeasure18}"></span></li>
+                <li><span th:text="${meal.strIngredient19}"></span>: <span th:text="${meal.strMeasure19}"></span></li>
+                <li><span th:text="${meal.strIngredient20}"></span>: <span th:text="${meal.strMeasure20}"></span></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
