@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de platillos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container mt-4">
+    <div class="card-footer">
+        <input type="text" class="form-control" placeholder="Buscar...">
+    </div>
+    <div class="row">
+        <div th:each="meal, iterStat : ${listaMeals}" class="col-md-4 mb-4">
+            <div class="card">
+                <img th:src="${meal.getStrCategoryThumb()}" class="card-img-top" alt="Image of category" th:alt="${meal.strCategory}">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${meal.getStrCategory()}"></h5>
+                    <p class="card-text" th:text="${meal.getStrCategoryDescription()}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
